@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
       redirect_to projects_url
     else
       render :new
+    end
   end
 
   def show
