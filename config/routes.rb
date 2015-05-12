@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  root 'projects#index'
+
   resources :projects, only: [:new, :show, :create]
+  resources :projects do
+    resources :rewards, except: :index
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -19,7 +24,7 @@ Rails.application.routes.draw do
 
   # Example resource route with options:
   #   resources :products do
-  #     member do
+  #     member d
   #       get 'short'
   #       post 'toggle'
   #     end

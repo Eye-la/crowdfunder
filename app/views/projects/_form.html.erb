@@ -21,6 +21,18 @@
     <%= f.date_select :end_date %>
   </div>
 
+  <h4>Rewards</h4>
+
+  <div id="rewards">
+    <%= f.fields_for :rewards do |rewards_form| %>
+      <%= render 'reward_fields', f: rewards_form %>
+    <% end %>
+
+    <div class="links">
+      <%= link_to_add_association 'add reward', f, :rewards %>
+    </div>
+  </div>
+
   <%= f.submit %>
 
 <% end %>
