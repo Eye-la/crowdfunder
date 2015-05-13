@@ -1,4 +1,8 @@
 class Pledge < ActiveRecord::Base
 
-  validates :pledge_amt, presence: true, numercality: {integer: true}
+  belongs_to :user
+  belongs_to :project
+  belongs_to :reward
+
+  validates :pledge_amt, presence: true, numericality: {integer: true}
 end
