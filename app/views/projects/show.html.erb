@@ -1,2 +1,15 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<h1>Project <%= @project.name %></h1>
+
+<p><b>Description:</b>
+	<%= @project.description %>
+</p>
+
+<p>Funding Goal: <%= @project.funding_goal %></p>
+<p>Start date: <%= @project.start_date %></p>
+<p>End date: <%= @project.end_date %></p>
+
+<p><b>Pledge Rewards for <%= @project.name %></b></p>
+
+<div class="reward">
+
+</div>

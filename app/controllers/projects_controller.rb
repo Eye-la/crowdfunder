@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
+  def index
+    @projects = Project.all
+  end
+
   def new
     @project = Project.new
+    # @project.rewards.build
   end
 
   def create

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root 'projects#index'
 
-  resources :projects, only: [:new, :show, :create]
+  resources :projects, only: [:index, :new, :show, :create]
   resources :projects do
-    resources :rewards, except: :index
+    resources :rewards
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
