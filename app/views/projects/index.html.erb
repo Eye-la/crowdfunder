@@ -1,0 +1,11 @@
+<h1>Projects List</h1>
+
+<% @projects.each do |project| %>
+  <%= link_to image_tag(project.photo), "/projects/#{project.id}" %>
+  <%= link_to project.name, "/projects/#{project.id}" %><br/>
+  <p>
+    <%= project.location %><br/>
+
+  </p>
+<% end %>
+
