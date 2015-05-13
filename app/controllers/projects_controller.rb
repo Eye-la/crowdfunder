@@ -1,4 +1,10 @@
 class ProjectsController < ApplicationController
+  before_filter :require_login, except: [:index, :show]
+
+  def index
+    @projects = Project.all
+  end
+
   def new
     @project = Project.new
   end
