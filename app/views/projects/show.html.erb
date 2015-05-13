@@ -5,12 +5,15 @@
 </p>
 
 <p>Funding Goal: <%= @project.funding_goal %></p>
-<p>Start date: <%= @project.start_date %></p>
-<p>End date: <%= @project.end_date %></p>
+<p>Start date: <%= @project.start_date.to_date %></p>
+<p>End date: <%= @project.end_date.to_date %></p>
 
-<div id ="reward">
+Total Funding raised for far:
 
-<p><b>Pledge Rewards for <%= @project.name %></b></p>
+<div id ="rewards">
+
+	<p><b>Rewards for <%= @project.name %></b></p>
+	<p><%= render @project.rewards %></p>
 
 </div>
 
