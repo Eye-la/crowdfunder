@@ -30,6 +30,8 @@ gem 'cocoon'
 
 gem 'sorcery'
 
+gem 'cancancan'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
