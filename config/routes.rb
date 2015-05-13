@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'projects#show'
+  root 'projects#index'
 
-  resources :projects, only: [:new, :show, :create]
+  resources :projects, only: [:index, :new, :show, :create]
   resources :projects do
     resources :rewards, except: :index
   end
