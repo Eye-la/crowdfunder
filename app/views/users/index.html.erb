@@ -1,6 +1,11 @@
-<h1>Welcome <%= current_user.name %>!</h1>
+<h1>Welcome <%= current_user.first_name %>!</h1>
 
-<% current_user.pledges.each do |pledge| %>
+<% current_user.rewards.each do |reward| %>
+  <div>
+    <%= link_to reward.project.name, projects_path(@project) %>
+  </div>
+<% end %>
+
 <div>
-
+  <p>Total pledges: <%= current_user.pledges.sum(:pledge_amt) %></p>
 </div>

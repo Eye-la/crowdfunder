@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates :email, uniqueness: true
 
+  def total_pledges(current_user)
+    current_user.pledges.sum(:pledge_amt)
+  end
 end

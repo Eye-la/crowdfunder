@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :rewards
   end
 
-  resources :users, only: [:new, :create, :edit]
+  resources :users
   resources :user_sessions, only: [:new, :create, :destroy]
 
   get 'login' => 'user_sessions#new', :as => :login
