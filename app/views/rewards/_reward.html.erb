@@ -1,5 +1,16 @@
-<p><div id="rewards"><%= reward.title %>   $ <%= reward.amount %>.00<br />
-<%= reward.description %>
-<%= reward.backer_limit %></p>
-<%= button_to "Pledge", @pledge, remote: true %>
+<div id="rewards">
+	Title: <%= reward.title %>
+	<br />
+	Pledge Amount:
+	<div class="reward-amt">
+		<%= number_to_currency reward.amount %><br />
+	</div>
+
+	<%= reward.description %><br />
+	Total rewards at this level: <%= reward.backer_limit %>
+
+	<%= form_tag project_pledges_path(reward.project) do %>
+		<%= hidden_field_tag :reward_id, reward.id %>
+		<%= submit_tag "Pledge #{number_to_currency reward.amount}" %>
+	<% end %>
 </div>

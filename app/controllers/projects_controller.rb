@@ -8,11 +8,12 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.rewards.build
+    # @project.rewards.pledges.build
   end
 
   def create
     @project = Project.new(project_params)
+    # @project = Project.new(name: params[:project][:name], description: params[:project][:description])
     if @project.save
       redirect_to projects_url
     else
@@ -24,7 +25,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  private
+private
 
   def project_params
     params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
