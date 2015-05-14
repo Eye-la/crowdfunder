@@ -8,6 +8,9 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
+  <div>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category:") %>
+  </div>
   <div class="field">
     <%= f.label :funding_goal %>
     <%= f.number_field :funding_goal %>

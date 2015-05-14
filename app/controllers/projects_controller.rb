@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.rewards.build
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   def create
