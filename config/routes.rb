@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'categories/index'
-
-  get 'categories/show'
-
   root 'projects#index'
 
   resources :projects, only: [:index, :new, :show, :create] do
     resources :pledges, only: [:show, :create]
     resources :rewards
   end
+
+  resources :categories, only: [:index, :show]
 
   resources :users, only: [:new, :create, :edit]
   resources :user_sessions, only: [:new, :create, :destroy]
