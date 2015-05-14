@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'categories/index'
+
+  get 'categories/show'
+
   root 'projects#index'
 
   resources :projects, only: [:index, :new, :show, :create] do
