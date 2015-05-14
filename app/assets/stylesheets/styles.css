@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Grand+Hotel|Raleway);
+
+#nav-bar {
+  background-color: #fbfbfb;
+}
+
+#notice {
+  background-color: green;
+}
+
+#alert {
+  background-color: #ff6666;
+}
+
+.form {
+
+}
+
+.flashes {
+  background-color: #000
+
+}
+
+.field {
+
+}
+
+body {
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5em; 
+}
+
+h1 {
+  font-family: "Grand Hotel", cursive;
+  font-size: 2.25em;
+  color: #03A89E;
+
+}

@@ -32,6 +32,8 @@ gem 'sorcery'
 
 gem 'cancancan'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

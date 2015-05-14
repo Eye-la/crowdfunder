@@ -4,8 +4,10 @@ class Project < ActiveRecord::Base
   has_many :pledges, through: :rewards
 
   belongs_to :user
+  belongs_to :category
 
   accepts_nested_attributes_for :rewards
+  acts_as_taggable
   validates :funding_goal, presence: true, numericality: {integer: true}
 
  # def days_left_on_project

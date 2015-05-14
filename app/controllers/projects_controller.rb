@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
   before_filter :require_login, except: [:index, :show]
 
   def index
-    @projects = Project.all
+    if params[:tag]
+      @projects = Project.tagged_with(params[:tag])
+    else
+      @projects = Project.all
+    end
   end
 
   def new
@@ -28,6 +32,6 @@ class ProjectsController < ApplicationController
 private
 
   def project_params
-    params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
+    params.require(:project).permit(:name, :description, :category_id, :funding_goal, :start_date, :end_date, :tag_list, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
   end
 end
