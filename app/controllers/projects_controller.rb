@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   before_filter :require_login, except: [:index, :show]
 
   def index
+    @categories = Category.all
     if params[:tag]
       @projects = Project.tagged_with(params[:tag])
     else

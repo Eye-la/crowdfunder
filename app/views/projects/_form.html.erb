@@ -9,7 +9,7 @@
     <%= f.text_field :description %>
   </div>
   <div>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category:") %>
+    <%= f.select(:category_id, options_for_select(Category.all.map{|c| [c.name, c.id]}), :prompt => "Select a category:") %>
   </div>
   <div class="field">
     <%= f.label :funding_goal %>
