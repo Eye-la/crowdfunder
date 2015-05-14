@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.category_id = params[:category_id]
     if @project.save
       redirect_to projects_url
     else
@@ -28,6 +29,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
+    params.require(:project).permit(:name, :description, :category_id, :funding_goal, :start_date, :end_date, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
   end
 end

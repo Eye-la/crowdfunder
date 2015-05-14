@@ -1,1 +1,8 @@
-_project.html.erb
+<li class="project">
+  <%= link_to project_path(project.id) do %>
+   <em><b>
+     <%= project.name %>
+   </em></b>
+  <% end %>
+  <%= project.description %>
+</li>
