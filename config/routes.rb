@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'projects#index'
 
   resources :projects, only: [:index, :new, :show, :create] do
-    resources :pledges, only: [:show, :create]
+    resources :pledges
     resources :rewards
   end
 
