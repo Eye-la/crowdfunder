@@ -9,7 +9,7 @@
 </p>
 
 <p><b>Tags:</b>
-	<%= @project.tag_list %>
+	<%= raw @project.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 </p>
 
 <p>Funding Goal: <%= @project.funding_goal %></p>
