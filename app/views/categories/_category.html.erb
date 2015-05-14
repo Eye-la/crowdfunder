@@ -1,5 +1,7 @@
 <div id="categories">
+  <ul>
   <%= link_to category_path(category.id) do %>
-      <%= category.name %>
+      <li><%= category.name %></li>
   <% end %>
+  </ul>
 </div>
