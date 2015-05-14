@@ -1,8 +1,2 @@
 <h1>Categories</h1>
-<ul>
-  <div id="categories">
-    <% @categories.each do |category| %>
-    <ul><%= category.name %></ul>
-    <% end %>
-  </div>
-</ul>
+<%= render @categories %>
