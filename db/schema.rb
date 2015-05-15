@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514221808) do
+ActiveRecord::Schema.define(version: 20150515195235) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20150514221808) do
   end
 
   create_table "pledges", force: :cascade do |t|
-    t.integer  "project_id"
     t.integer  "user_id"
     t.integer  "reward_id"
     t.datetime "created_at", null: false
