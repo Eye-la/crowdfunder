@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :edit]
   resources :user_sessions, only: [:new, :create, :destroy]
+  resources :project_comments, only: [:show, :create, :destroy]
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

@@ -28,6 +28,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+
+    if current_user
+      @project_comment = @project.project_comments.build
+    end
   end
 
   def destroy
