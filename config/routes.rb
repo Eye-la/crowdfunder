@@ -5,12 +5,16 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :new, :show, :create] do
     resources :pledges
     resources :rewards
+    resources :comments, only: [:show, :create, :destroy]
   end
 
   resources :categories, only: [:index, :show]
 
-  resources :users, only: [:index, :new, :create, :edit]
+  resources :users, except: [:destroy]
+
   resources :user_sessions, only: [:new, :create, :destroy]
+
+  post '/users/:id(.:format)' => 'users#update'
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

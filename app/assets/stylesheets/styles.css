@@ -1,7 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Grand+Hotel|Raleway);
 
 #nav-bar {
-  background-color: #fbfbfb;
+  background-color: lightblue;
+  text-align: right;
+  height: 3em;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
 }
 
 #notice {
@@ -17,13 +28,62 @@
 }
 
 .flashes {
-  background-color: #000
-
+  background-color: #000;
+  width: 60%;
+  text-align: center;
+  margin: auto;
 }
 
 .field {
 
 }
+
+#projects {
+  float: left;
+}
+
+#projects a {
+
+}
+
+.categories {
+  width: 75%;
+  text-align: center;
+  margin: auto;
+}
+
+.categories ul li {
+  float: left;
+  display: inline;
+  list-style-type: none;
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid #000000;
+  margin: 3px;
+  color: #000000;
+}
+
+.categories:nth-child(5n) ul li {
+  background-color: red;
+}
+.categories:nth-child(5n+1) ul li {
+  background-color: orange;
+}
+.categories:nth-child(5n+2) ul li {
+  background-color: yellow;
+}
+.categories:nth-child(5n+3) ul li {
+  background-color: green;
+}
+.categories:nth-child(5n+4) ul li {
+  background-color: blue;
+}
+
+.categories ul a {
+    text-decoration: none;
+  }
 
 body {
   font-family: "Raleway", Arial, sans-serif;

@@ -1,9 +1,7 @@
-<li class="project">
+<p class="project">
   <%= link_to project_path(project.id) do %>
-   <em><b>
      <%= project.name %>
-   </em></b>
   <% end %>
   <%= project.description %>
   <%= raw project.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-</li>
+</p>
