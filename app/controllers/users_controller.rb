@@ -25,12 +25,10 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.save
-      message = "Profile updated!"
+      redirect_to edit_user_url, notice: "Profile updated!"
     else
-      message = @user.errors.full_messages
+      redirect_to edit_user_url, alert: @user.errors.full_messages
     end
-    flash.now[message]
-    render '/users/_form.html.erb'
   end
 
   def show
