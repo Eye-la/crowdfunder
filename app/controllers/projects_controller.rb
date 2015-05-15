@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    # @project = Project.new(name: params[:project][:name], description: params[:project][:description])
+    @project.user = current_user
     if @project.save
       redirect_to projects_url
     else
@@ -28,6 +28,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+
+    if current_user
+      @comment = @project.comments.build
+    end
   end
 
   def destroy
@@ -44,6 +48,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :category_id, :funding_goal, :start_date, :end_date, :tag_list, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
+    params.require(:project).permit(:name, :description, :category_id, :user_id, :funding_goal, :start_date, :end_date, :tag_list, rewards_attributes: [:id, :title, :description, :amount, :backer_limit, :destroy])
   end
 end

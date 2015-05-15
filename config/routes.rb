@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :new, :show, :create] do
     resources :pledges
     resources :rewards
+    resources :comments, only: [:show, :create, :destroy]
   end
 
   resources :categories, only: [:index, :show]

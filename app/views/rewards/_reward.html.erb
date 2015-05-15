@@ -1,10 +1,8 @@
-<div id="rewards">
+<div id="reward-view">
 	Title: <%= reward.title %>
 	<br />
-	Pledge Amount:
-	<div class="reward-amt">
-		<%= number_to_currency reward.amount %><br />
-	</div>
+	<h3> Pledge Amount:  <%= number_to_currency reward.amount %> </h3>
+
 
 	<%= reward.description %><br />
 	Total rewards at this level: <%= reward.backer_limit %>
@@ -13,4 +11,5 @@
 		<%= hidden_field_tag :reward_id, reward.id %>
 		<%= submit_tag "Pledge #{number_to_currency reward.amount}" %>
 	<% end %>
+	<br>
 </div>
