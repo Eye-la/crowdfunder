@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to root_url
     else
-      render :new
+      redirect_to new_user_url, alert: @user.errors.full_messages
     end
   end
 

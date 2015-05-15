@@ -1,7 +1,3 @@
 <h1>Edit Profile</h1>
-<% @user = current_user %>
-  <div class="flashes">
-    <p id="message"><%= flash.now[message] %></p>
-  </div>
 <%= render 'form' %>
 <%= link_to 'Back', root_url %>
