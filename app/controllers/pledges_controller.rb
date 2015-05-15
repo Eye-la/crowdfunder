@@ -5,11 +5,11 @@ class PledgesController < ApplicationController
   end
 
   def create
-    # @reward.project = project_id
+
     @project = Project.find(params[:project_id])
     @reward = @project.rewards.find(params[:reward_id])
 
-
+    # not saving project_id
     @pledge = Pledge.new(reward: @reward, user: current_user)
 
     respond_to do |format|
