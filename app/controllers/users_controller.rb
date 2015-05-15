@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.save
+    if @user.update(user_params)
       redirect_to edit_user_url, notice: "Profile updated!"
     else
       redirect_to edit_user_url, alert: @user.errors.full_messages
