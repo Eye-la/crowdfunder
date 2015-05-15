@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show]
 
-  resources :users, only: [:new, :create, :edit]
+  resources :users, except: [:destroy]
   resources :user_sessions, only: [:new, :create, :destroy]
+
+  post '/users/:id(.:format)' => 'users#update'
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

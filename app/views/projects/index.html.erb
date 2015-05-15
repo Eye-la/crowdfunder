@@ -1,11 +1,10 @@
 <h1>Projects</h1>
+<h4>Categories</h4>
 <%= render @categories %>
 
-<%= link_to 'Create New Project', new_project_path %>
-<h3>Projects</h3>
-<ul>
 <div id="projects">
+  <hr>
 	<%= render @projects %>
-</div></ul>
+</div>
 
 <!-- Category.all.group_by{|c| c.name[0]}.each{|group,things| puts "===== #{group} ====="; things.each{|thing| puts "- #{thing.name}"} }; -->
