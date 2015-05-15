@@ -34,7 +34,7 @@ gem 'cancancan'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 
-
+gem 'foundation-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
