@@ -13,8 +13,27 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to root_url
     else
-      render :new
+      redirect_to new_user_url, alert: @user.errors.full_messages
     end
+  end
+
+  def edit
+    @user = current_user
+    render '/users/_form.html.erb'
+  end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to edit_user_url, notice: "Profile updated!"
+    else
+      redirect_to edit_user_url, alert: @user.errors.full_messages
+    end
+  end
+
+  def show
+    @user = current_user
+    render '/users/_form.html.erb'
   end
 
   private

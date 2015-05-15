@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :rewards
   acts_as_taggable
   validates :funding_goal, presence: true, numericality: {integer: true}
+  validates :category_id, presence: true
 
  # def days_left_on_project
  # 		var	current_date = Datetime.now;
