@@ -1,20 +1,20 @@
 <h1>Welcome <%= current_user.first_name %>!</h1>
 
-  <h3>Projects</h3>
-  <% current_user.owned_projects.each do |project| %>
-    <div>
-      <%= link_to project.name, projects_path(@project) %>
+<h3>Projects</h3>
+<% current_user.owned_projects.each do |project| %>
+  <div>
+    <%= link_to project.name, "/projects/#{project.id}" %>
   </div>
 <% end %>
 
 <h3>Pledged Projects</h3>
-<% current_user.rewards.each do |reward| %>
+<% current_user.backed_projects.each do |project| %>
   <div>
-    <%= link_to reward.project.name, projects_path(@project) %>
+    <%= link_to project.name, "/projects/#{project.id}" %>
   </div>
 <% end %>
 
 <div>
-  <p>Total pledges to date: $<%= current_user.pledges.sum(:pledge_amt).amount %></p>
+
 </div>
 
