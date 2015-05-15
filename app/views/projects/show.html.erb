@@ -16,6 +16,9 @@
 <p>Start date: <%= @project.start_date.to_date.strftime("%B %e, %Y") %></p>
 <p>End date: <%= @project.end_date.to_date.strftime("%B %e, %Y") %></p>
 
+<p>Time left to reach goal:
+<%= @project.days_left_on_project %></p>
+
 Total Funding raised so far:
 <%= number_to_currency @project.total_funding %>
 
