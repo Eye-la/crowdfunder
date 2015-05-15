@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :pledges
   has_many :rewards, through: :pledges
   has_many :backed_projects, through: :rewards, source: :project
+  has_many :project_comments
+  has_many :projects, through: :project_comments
 
 
   validates :password, length: { minimum: 5 }
