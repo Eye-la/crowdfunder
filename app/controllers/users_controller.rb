@@ -17,19 +17,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    render '/users/_form.html.erb'
+  end
+
   def update
     @user = current_user
+    if @user.save
+      message = "Profile updated!"
+    else
+      message = @user.errors.full_messages
+    end
+    flash.now[message]
     render '/users/_form.html.erb'
   end
 
   def show
     @user = current_user
-    if @user.save
-      flash[:notice] = "Profile updated!"
-    else
-      flash[:alert] = @user.errors.full_messages
-    end
-    redirect_to '/users/_form.html.erb'
+    render '/users/_form.html.erb'
   end
 
   private
