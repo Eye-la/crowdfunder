@@ -15,6 +15,6 @@
 <% end %>
 
 <div>
-  <p>Total pledges to date: $<%= current_user.pledges.sum(:pledge_amt) %></p>
+  <p>Total pledges to date: $<%= current_user.pledges.sum(:pledge_amt).amount %></p>
 </div>
 

@@ -7,6 +7,9 @@ class PledgesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @reward = @project.rewards.find(params[:reward_id])
+    # @project = project_id
+    # @project.user = current_user
+    # @reward = reward_id
 
     @pledge = Pledge.new(reward: @reward, user: current_user)
 

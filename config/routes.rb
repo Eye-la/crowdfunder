@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show]
 
-  resources :users, only: [:new, :create, :edit]
+  resources :users, only: [:index, :new, :create, :edit]
   resources :user_sessions, only: [:new, :create, :destroy]
 
   get 'login' => 'user_sessions#new', :as => :login

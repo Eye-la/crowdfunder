@@ -6,6 +6,7 @@ class RewardsController < ApplicationController
 
   def create
   	@reward = @project.rewards.build(rewards_params)
+    @project = project_id
   end
 
   def show
