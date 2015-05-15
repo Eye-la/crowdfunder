@@ -4,8 +4,8 @@
   <%= @project.category.name %>
 </p>
 
-<<p><b>Owner:</b>
-  <%#= @project.user.first_name %>
+<p><b>Owner:</b>
+  <%= @project.user.first_name %>
 </p>
 
 <p><b>Description:</b>
@@ -76,5 +76,5 @@ End date: <%= @project.end_date.to_date.strftime("%B %e, %Y") %> </p>
   <% end %>
 
 <% else %>
-  <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
+  <p>Please <%= link_to "log in", new_user_session_path %> to add a comment.</p>
 <% end %>
