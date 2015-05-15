@@ -27,9 +27,9 @@ Category.create(name: "Theatre")
 50.times do
   project = Project.create(name: Faker::Commerce.product_name, description: Faker::Lorem.paragraph, funding_goal: rand(1000..10000000), start_date: Faker::Date.backward(14), end_date: Faker::Date.forward(30), category_id: rand(0..14), user_id: rand(0..19))
   rand(0..5).times { project.tag_list.add(Faker::Lorem.word) }
+  rand(1..5).times { Reward.create(title: Faker::Commerce.product_name, description: Faker::Lorem.paragraph, amount: rand(1..10000), backer_limit: rand(1..1000), project_id: rand(0..49) ) }
   project.save
 end
 
-100.times { Reward.create(title: Faker::Commerce.product_name, description: Faker::Lorem.paragraph, amount: rand(1..10000), backer_limit: rand(1..1000), project_id: rand(0..49) ) }
 
 500.times { Pledge.create(project_id: rand(0..49), user_id: rand(0..19), reward_id: rand(0..99)) }
