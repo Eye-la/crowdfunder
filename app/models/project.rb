@@ -2,8 +2,8 @@ class Project < ActiveRecord::Base
 
   has_many :rewards
   has_many :pledges, through: :rewards
-  has_many :project_comments
-  has_many :users, through: :project_comments
+  has_many :comments
+  has_many :users, through: :comments
 
   belongs_to :user
   belongs_to :category

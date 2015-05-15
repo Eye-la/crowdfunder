@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if current_user
-      @project_comment = @project.project_comments.build
+      @comment = @project.comments.build
     end
   end
 
