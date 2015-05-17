@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20150515195235) do
     t.datetime "end_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "category_id"
     t.integer  "user_id"
+    t.integer  "category_id"
   end
 
   add_index "projects", ["category_id"], name: "index_projects_on_category_id"

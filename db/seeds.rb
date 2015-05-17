@@ -6,6 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+Project.destroy_all
+User.destroy_all
+Reward.destroy_all
+Pledge.destroy_all
+Comment.destroy_all
+Category.destroy_all
+
+
 20.times { User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password", password_confirmation: "password") }
 
 Category.create(name: "Art")
@@ -32,4 +41,4 @@ Category.create(name: "Theatre")
 end
 
 
-500.times { Pledge.create(project_id: rand(0..49), user_id: rand(0..19), reward_id: rand(0..99)) }
+100.times { Pledge.create(user_id: rand(0..19), reward_id: rand(0..99)) }

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :ensure_logged_in, only: [:create, :destroy]
-  before_filter :load_product
+  before_filter :load_project
 
   def show
     @comment = Comment.find(params[:id])

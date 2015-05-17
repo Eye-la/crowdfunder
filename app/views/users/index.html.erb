@@ -10,7 +10,7 @@
 <h3>Pledged Projects</h3>
 <% current_user.backed_projects.each do |project| %>
   <div>
-    <%= link_to project.name, "/projects/#{project.id}" %> Owner: <%# project.user.first_name %>
+    <%= link_to project.name, "/projects/#{project.id}" %> Owner: <%= project.user.first_name %>
   </div>
 <% end %>
 
