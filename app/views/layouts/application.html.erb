@@ -8,6 +8,7 @@
 </head>
 <body>
   <div id="nav-bar">
+    <%= link_to 'Home', projects_url %>
     <%= link_to 'Create New Project', new_project_path %>
     <% if current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user) %>

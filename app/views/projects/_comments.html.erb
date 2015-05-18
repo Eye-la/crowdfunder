@@ -1,7 +1,7 @@
 <% @project.comments.each do |comment| %>
   <div class="comment">
     <div class="poster">
-      Posted by <em><%= comment.user %></em>.  Added on: <%= comment.created_at %>
+      Posted by <em><%= comment.user_id %></em>.  Added on: <%= comment.created_at %>
     </div>
     <p class="comment">
       <%= comment.comment %>
