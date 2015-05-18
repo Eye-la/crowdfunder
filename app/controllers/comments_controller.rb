@@ -10,10 +10,14 @@ class CommentsController < ApplicationController
     @comment = @project.comments.build(comment_params)
     @comment.user = current_user
 
-    if @comment.save
-      redirect_to projects_path, notice: "Comment created successfully"
-    else
-      render "projects/show"
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to projects_path(@project.id), notice: "Comment created successfully" }
+        format.js {}
+      else
+        format.html {render "projects/show", alert: "There was an error." }
+        format.js {}
+      end
     end
   end
 

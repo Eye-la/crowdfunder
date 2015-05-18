@@ -39,21 +39,14 @@ End date: <%= @project.end_date.to_date.strftime("%B %e, %Y") %> </p>
 
 <h3>Comments</h3>
 
-<% @project.comments.each do |comment| %>
-    <p>
-      <%= comment.comment %>
-      <br>
-      <% if comment.user != nil %>
-        <em> by <%= comment.user.email %></em>
-        Added on: <%= comment.created_at %>
-      <% end %>
-    </p>
-<% end %>
+<div id="comment-list">
+  <%= render :partial => "comments" %>
+</div>
 
   <% if current_user %>
   <h4>New Comment:</h4>
 
-  <%= form_for [@project, @comment] do |f| %>
+  <%= form_for [@project, @comment], :remote => true do |f| %>
     <% if @comment.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
