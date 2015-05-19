@@ -33,8 +33,6 @@ class Project < ActiveRecord::Base
   end
 
   def all_funds
-    total = 0
-    projects.each {|project| total += project.total_funding}.sum
-      return total
-    end
+    self.pledges.sum(:amount)
+  end
 end
