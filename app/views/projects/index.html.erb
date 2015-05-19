@@ -1,4 +1,10 @@
 <h1>Projects</h1>
+
+<div id="projects_info">
+  <h4>Total Raised Money: <%#number_to_currency @project.all_funds %></h4>
+</div>
+
+
 <h4 class="categories">Categories</h4>
 <%= render @categories %>
 
@@ -6,5 +12,3 @@
   <hr>
 	<%= render @projects %>
 </div>
-
-<!-- Category.all.group_by{|c| c.name[0]}.each{|group,things| puts "===== #{group} ====="; things.each{|thing| puts "- #{thing.name}"} }; -->

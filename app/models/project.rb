@@ -32,4 +32,9 @@ class Project < ActiveRecord::Base
     pledges.map { |pledge| pledge.reward.amount }.sum
   end
 
+  def all_funds
+    total = 0
+    projects.each {|project| total += project.total_funding}.sum
+      return total
+    end
 end
